@@ -3,12 +3,18 @@ console.log(peopleInSpace)
 
 const numberOfAstrosInSpace = (data) => {
   //return the number of astronauts in space right now, using the data
+  return data['number']
 }
 console.log("number of people in space: ", numberOfAstrosInSpace(peopleInSpace))
 
 
 const astroNames = (data) => {
   // return an array containing the name strings of the astronauts in space
+  return data['people'].map( (person) => {
+      return person['name']
+  });
+
+
 }
 console.log("names of people in space: ", astroNames(peopleInSpace))
 
