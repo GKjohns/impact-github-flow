@@ -17,22 +17,37 @@ const astroNames = (data) => {
 
 }
 console.log("names of people in space: ", astroNames(peopleInSpace))
-
+    
 
 const allInSameCraft = (data) => {
   // return a boolean that specifies whether all astronauts are in the same space craft
+    var first_craft = data['people'][0]['craft']
+    var is_the_same = true
+    data.people.forEach( (person) => {
+        if (person['craft'] != first_craft) {
+            is_the_same = false
+        }
+    })
+
+    return is_the_same
 }
 console.log("same craft? ", allInSameCraft(peopleInSpace))
 
 
 const successfulResponse = (data) => {
-  // return a boolean that specifies whether the response from the Open Notify API was successful
+    return data["message"] == "success"
 }
 console.log("successful response? ", successfulResponse(peopleInSpace))
 
 
 const wheresJoe = (data) => {
-  // return "in space!" if Joe Acaba is in space right now. Otherwise, return "dunno."
+    var saw_joe = false
+    data.people.forEach( (person) => {
+        if (person.name == "Joe Acaba") {
+            saw_joe = true
+        }
+    })
+    return saw_joe ? "in space!" : "dunno"
 }
 console.log("where's Joe? ", wheresJoe(peopleInSpace))
 
