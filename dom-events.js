@@ -24,10 +24,13 @@ renderAstros = () => {
  // log to the console the client's x coordinate of their mouse as they move it around the window.
 // var x = mouseEvent.clientX;
 onmousemove = function(e){
-  console.log("mouse location:", e.clientX, e.clientY)
+  // console.log("mouse location:", e.clientX, e.clientY)
 }
 
 // make an element that displays the most recent key pressed in the DOM
+document.addEventListener('keydown', (event) => {
+    document.getElementById("last_key").innerHTML = "last key: " + event.key
+})
 
 // create a text input element. When a user clicks on the text field to input, log the input element to console.
 
