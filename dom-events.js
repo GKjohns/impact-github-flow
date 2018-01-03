@@ -33,7 +33,10 @@ document.addEventListener('keydown', (event) => {
 })
 
 // create a text input element. When a user clicks on the text field to input, log the input element to console.
-
+function myFunction() {
+    var x = document.getElementById("myInput").value;
+    console.log(x);
+}
 // when a user clicks away from the input, log ("bye") to the console.
 
 // wrap the input element with a form element.
