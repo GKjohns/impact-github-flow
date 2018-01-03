@@ -16,6 +16,10 @@ renderAstros = () => {
 }
 
  // create a function that alerts "these are all the astronauts!" when the title element is clicked.
+ var title = document.getElementsByClassName('title')[0]
+ title.onclick = () => {
+     alert("these are all the astronauts!")
+ }
 
  // log to the console the client's x coordinate of their mouse as they move it around the window.
 
